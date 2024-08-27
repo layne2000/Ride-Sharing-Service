@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div id="delete-box">
+  <h1>Delete Driver</h1>
+
+  <p>Are you sure you want to delete your driver account: {{ driver }}?</p>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <!-- <input type="submit" value="Yes, delete." /> -->
+    <button type="submit">Yes, delete.</button>
+  </form>
+</div>
+
+{% endblock %}

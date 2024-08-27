@@ -1,0 +1,25 @@
+#driver-box{
+    width:1300px;
+    height:auto;
+    text-align:center;
+    background:#cde8f8bf;
+    padding:20px 50px;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding:30px 50px;
+    
+}
+#driver-box h1{
+    color:rgb(34, 32, 77);
+    text-align:center;
+    font-weight: 900;
+}
+.driver{
+    background:#ffffff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.driver p{
+    font-size: 18px;
+}

@@ -1,0 +1,22 @@
+
+
+{% extends "base_generic.html" %}
+{% block content %}
+
+<div id="home-box">
+    <h1>Ride Sharing Service Home Page</h1>
+    <p> Welcome, user {{user.username}} !</p>
+    <small style="color:dimgray">
+        Note: If you have a driver account and want to see or edit your previous rides, click My Orders as well
+    </small><br><br>
+    <style type="text/css">a {text-decoration: none}</style>
+    <ul style="list-style:none">
+        <li><br><a href="{%url 'ride:rideCreate' %}">Request a ride</a> <br><br> </li>
+        <br>
+        <li><br><a href="{%url 'ride:sharerRideSearch' %}">Join a ride</a> <br><br> </li>
+        <br>
+        <li><br><a href="{% url 'ride:driverRideSearch' %}">Drive for a ride</a> <br><br> </li>
+    </ul>
+
+</div>
+{% endblock %}

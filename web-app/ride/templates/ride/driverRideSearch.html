@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <div id="driverRideSearch">
+    <h1>Open Rides Matching Your Driver Profile:</h1>
+    <br>
+    <br>
+    {% if rides %}
+    <ul class="item">
+        <table style="width:100%">
+            <tr>
+              <th>Address</th>
+              <th>Arrival Time</th>
+              <th>Passenger Number</th>
+              <th>Allow Sharer</th>
+            </tr>
+            {% for ride in rides %}
+            <tr>
+              <td>{{ride.address}}</td>
+              <td>{{ride.arrival_time}}</td>
+              <td>{{ride.passenger_num}}</td>
+              <td>{{ride.allow_sharer}}</td>
+              <td><button><a href="{% url 'ride:driverRideClaimConfirm' ride.id %}">Claim</a></button></td>
+            </tr>
+            {% endfor%}
+          </table>
+    {% else %}
+        <p>None</p>
+    {% endif %}
+        <br>
+    </ul>
+    </div>
+{% endblock %}

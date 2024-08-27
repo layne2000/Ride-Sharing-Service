@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div id="rideOwnerEditForm">
+  <h1>Edit your Ride</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    <table align="center" style="height: 400px;">
+    {{ form.as_table }}
+    </table><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+{% endblock %}

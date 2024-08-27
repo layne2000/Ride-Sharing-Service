@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div id="rideDetail">
+  <h1>Ride Information</h1><br>
+  {% for ride in rides %} {# it's a must even if there's only one record, otherwise you can't get the data inside#}
+  <p><strong>Address:</strong> {{ ride.address }}</p> 
+  <p><strong>Arrival Time:</strong> {{ ride.arrival_time }}</p>
+  <p><strong>Passenger Number:</strong> {{ ride.passenger_num }}</p>
+  <p><strong>Allow Sharer:</strong> {{ ride.allow_sharer }}</p>
+  <p><strong>Ideal Vehicle Type:</strong> {{ ride.vehicle_type}}</p>
+  <p><strong>Special Request:</strong> {{ ride.special_request}}</p>
+  <p><strong>Status:</strong> {{ ride.status}}</p>
+  {% if ride.status == 'confirmed' %}
+    {% for driver in drivers %}
+      <p><strong>Driver:</strong> {{ driver.first_name }} {{ driver.last_name }}</p> 
+      <p><strong>Vehicle Type:</strong> {{ driver.vehicle_type }}</p> 
+      <p><strong>License Plate Number:</strong> {{ driver.license_plate_number }}</p> 
+      <p><strong>Max Number of Passengers:</strong> {{ driver.max_num_of_passenger }}</p> 
+      <p><strong>Special Vehicle Info:</strong> {{ driver.special_vehicle_info }}</p> 
+    {% endfor %}
+  {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}
+

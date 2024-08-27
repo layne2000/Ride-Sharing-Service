@@ -1,0 +1,48 @@
+body{
+    background:linear-gradient(to right, #66aaaf 0%, #777fac 100%);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+#login-box{
+    width:30%;
+    height:auto;
+    margin:0 auto ;
+    margin-top:13%;
+    text-align:center;
+    background:#cde8f8bf;
+    padding:20px 50px;
+    border-radius: 15px;
+}
+#login-box h1{
+    color:rgb(34, 32, 77);
+}
+#login-box .form .item{
+    margin-top:15px;
+}
+#login-box .form .item i{
+    font-size:18px;
+    text-align: right;
+    color:rgb(252, 252, 252);
+}
+#login-box .form .item input{
+    width:180px;
+    font-size:18px;
+    border:0;
+    border-bottom:2px solid rgba(255, 255, 255, 0);
+    padding:5px 10px;
+    background:#e5f6ff;
+    color:rgb(0, 0, 0);
+    border-radius: 5px;
+}
+#login-box 	button{
+    margin-top:20px;
+    width:190px;
+    height:30px;
+    font-size:20px;
+    font-weight:700;
+    color:rgb(255, 255, 255);
+    background-image: linear-gradient(to right, #66aaaf 0%, #777fac 100%);
+    border:0;
+    border-radius:15px;
+}

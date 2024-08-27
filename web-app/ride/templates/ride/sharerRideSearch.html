@@ -1,0 +1,55 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+  <div id="rideJoinSearch">
+    <h1>Join a Ride:</h1>
+    <br>
+    <br>
+    <form action="{% url 'ride:sharerRideSearch' %}" method="post">
+        {% csrf_token %}
+        
+        <label for="">Destination:</label>
+        <input type="text" id="destination" name="destination" Required>
+        <br><br>
+
+        <label for="">Number of People:</label>
+        <input type="number" id="num_of_people" name="num_of_people" min='1' Required>
+        <br><br>
+
+        <label for="">Arrival Time Window:</label> <br><br>
+        <input type="datetime-local" id="earliest_time" name="earliest_time" Required><br><br>
+        <p>----------</p>
+        <input type="datetime-local" id="latest_time" name="latest_time" Required>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+    <br>
+    <div id="sharerRideSearchRecords">
+    <h3>Open Rides Matching the conditions:</h3>
+    <br>
+    <br>
+    {% if rides %}
+        <table style="width:100%" align="center" style="height: 400px;">
+            <tr>
+              <th>Address</th>
+              <th>Arrival Time</th>
+              <th>Passenger Number</th>
+            </tr>
+            {% for ride in rides %}
+            <tr>
+              <td>{{ride.address}}</td>
+              <td>{{ride.arrival_time}}</td>
+              <td>{{ride.passenger_num}}</td>
+              <td><button><a href="{% url 'ride:sharerRideJoin' pk=ride.id num_of_people=num_of_people %}">Join</a></button></td>
+            </tr>
+            {% endfor%}
+          </table>
+    {% else %}
+        <p>None</p>
+    {% endif %}
+        <br>
+    </div>
+{% endblock %}

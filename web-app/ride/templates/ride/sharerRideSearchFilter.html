@@ -1,0 +1,30 @@
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div id="rideJoinSearch">
+    <h1>Join a Ride:</h1>
+    <br>
+    <br>
+    <form action="{% url 'ride:sharerRideSearch' %}" method="post">
+        {% csrf_token %}
+
+        <label for="">Destination:</label>
+        <input type="text" id="destination" name="destination" Required>
+        <br><br>
+
+        <label for="">Number of People:</label>
+        <input type="number" id="num_of_people" name="num_of_people" min='1' Required>
+        <br><br>
+
+        <label for="">Arrival Time Window:</label> <br><br>
+        <input type="datetime-local" id="earliest_time" name="earliest_time" Required><br><br>
+        <p>----------</p>
+        <input type="datetime-local" id="latest_time" name="latest_time" Required>
+        <br><br>
+
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

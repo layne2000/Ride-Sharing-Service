@@ -1,0 +1,22 @@
+body{
+    background:linear-gradient(to right, #66aaaf 0%, #777fac 100%);
+    margin:0px;
+    background-repeat:no-repeat;
+    background-size:100% auto;
+	background-attachment:fixed;
+}
+
+#logout-box{
+    width:auto;
+    height:auto;
+    margin:0 auto ;
+    margin: 200px;
+    text-align:center;
+    background:#cde8f8bf;
+    padding:20px 50px;
+    border-radius: 5px;
+}
+
+#logout-box h1{
+    color:rgb(34, 32, 77);
+}

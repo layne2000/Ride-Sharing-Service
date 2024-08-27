@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Your Account</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    <script>
+        alert('{{ message }}');
+    </script>
+    {% endfor %}
+    {% endif %}
+    <form action="{% url 'ride:signin' %}" method="post">
+        {% csrf_token %} 
+        <div id="login-box">
+            <h1>Log in</h1>
+		    <div class="form">
+                <div class="item">
+                    <label for="">Username</label><br>
+                    <input type="text" id="username" name="username" Required>
+                    <br>
+                </div>
+
+            <div class="item">
+                <label for="">Password</label><br>
+                <input type="password" id="pw" name="pw" Required>
+                <br>
+            </div>
+        
+        </div>
+        <button type="submit">Login</button>
+        <br><br/>
+    </form>
+    <small style="color:dimgray">
+    Don't have account?<a type="button" href="{% url 'ride:userSignup' %}">Register</a>
+    </small>
+</div>
+<br><br/><br><br/><br><br/><br><br/><br><br/><br><br/><br><br/>
+</body>
+</html>

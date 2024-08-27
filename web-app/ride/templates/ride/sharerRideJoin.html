@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div id="sharerRideJoin">
+    <h1>Ride Information</h1>
+    {% for ride in rides %} 
+    <p><strong>Address:</strong> {{ ride.address }}</p> 
+    <p><strong>Arrival Time:</strong> {{ ride.arrival_time }}</p>
+    <p><strong>Current Passenger Number:</strong> {{ ride.passenger_num }}</p>
+    <p><strong>Allow Sharer:</strong> {{ ride.allow_sharer }}</p>
+    <p><strong>Ideal Vehicle Type:</strong> {{ ride.vehicle_type}}</p>
+    <p><strong>Special Request:</strong> {{ ride.special_request}}</p>
+    <p><strong>Status:</strong> {{ ride.status}}</p>
+    <br>
+    <p><strong>Are you sure you want to join this ride?</strong></p>
+    <form action="{% url 'ride:sharerRideJoin' ride.id num_of_people %}" method="post">
+        {% csrf_token %} 
+        <button type="submit">Yes</button>
+    </form>
+    {% endfor %}
+</div>
+{% endblock %}

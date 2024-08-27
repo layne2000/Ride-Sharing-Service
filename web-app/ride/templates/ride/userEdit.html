@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Your Account</title>
+    <link rel="stylesheet" href="/static/css/userEdit.css">
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    <script>
+        alert('{{ message }}');
+    </script>
+    {% endfor %}
+    {% endif %}
+    <div id="userEdit">
+        <form action="{% url 'ride:userEdit' user.id %}" method="post">
+            {% csrf_token %} 
+            <h2> Edit User information</h2>
+            <br>
+            <label for="">Username</label>
+            <input type="text" id="username" name="username", value={{username}} Required>
+            <br><br>
+            <label for="">Email</label>
+            <input type="email" id="email" name="email", value={{email}} Required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

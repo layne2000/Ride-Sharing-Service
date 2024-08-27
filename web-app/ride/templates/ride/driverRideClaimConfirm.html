@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div id="driverRideClaimConfirm">
+    <h1>Ride Information</h1><br>
+    {% for ride in rides %} 
+    <ul class="rider">
+    <p><strong>Address:</strong> {{ ride.address }}</p> 
+    <p><strong>Arrival Time:</strong> {{ ride.arrival_time }}</p>
+    <p><strong>Passenger Number:</strong> {{ ride.passenger_num }}</p>
+    <p><strong>Allow Sharer:</strong> {{ ride.allow_sharer }}</p>
+    <p><strong>Ideal Vehicle Type:</strong> {{ ride.vehicle_type}}</p>
+    <p><strong>Special Request:</strong> {{ ride.special_request}}</p>
+    <p><strong>Status:</strong> {{ ride.status}}</p>
+    <br>
+    <br>
+    <p><strong>Are you sure you want to claim this ride?</strong></p>
+    <form action="{% url 'ride:driverRideClaimConfirm' ride.id %}" method="post">
+        {% csrf_token %} 
+        <button type="submit">Confirm</button>
+    </form>
+    <br>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}

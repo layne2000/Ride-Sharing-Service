@@ -1,0 +1,137 @@
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div id="order-box">
+    <h1>My Orders</h1><br>
+    <small style="color: dimgray;">
+      Note: You can click the order to see its details and may edit it (like marking the rides you drove for as complete or edit open rides as a ride owner)
+    </small>
+    <ul class="item">
+        <strong><p> The following are the rides you own:</p></strong>
+        <p> 1) Open Ride (You can edit them):</p>
+        {% if ownedOpenRides %}
+        <table style="width:100%">
+          <tr>
+            <th>Address</th>
+            <th>Arrival Time</th>
+            <th>Passenger Number</th>
+            <th>Allow Sharer</th>
+          </tr>
+          {% for ownedOpenRide in ownedOpenRides %}
+          <tr>
+            <td>{{ownedOpenRide.address}}</td>
+            <td>{{ownedOpenRide.arrival_time}}</td>
+            <td>{{ownedOpenRide.passenger_num}}</td>
+            <td>{{ownedOpenRide.allow_sharer}}</td>
+            <td><button><a href="{% url 'ride:rideOwnerEditDetail' ownedOpenRide.id %}">Edit</a></button></td>
+          </tr>
+          {% endfor%}
+        </table>
+        {% else %}
+            <p>None</p>
+        {% endif %}
+        <br>
+        <p> 2) Confirmed Ride (You can only view them):</p>
+        {% if ownedConfirmedRides %}
+        <table style="width:100%">
+          <tr>
+            <th>Address</th>
+            <th>Arrival Time</th>
+            <th>Passenger Number</th>
+            <th>Allow Sharer</th>
+          </tr>
+          {% for ownedConfirmedRide in ownedConfirmedRides %}
+          <tr>
+            <td>{{ownedConfirmedRide.address}}</td>
+            <td>{{ownedConfirmedRide.arrival_time}}</td>
+            <td>{{ownedConfirmedRide.passenger_num}}</td>
+            <td>{{ownedConfirmedRide.allow_sharer}}</td>
+            <td><button><a href="{% url 'ride:rideDetail' ownedConfirmedRide.id %}">View</a></button></td>
+          </tr>
+          {% endfor%}
+        </table>
+        {% else %}
+            <p>None</p>
+        {% endif %}
+        <br>
+    </ul>
+
+    <ul class="item">
+        <strong><p> The following are the rides you share:</p></strong>
+        <p> 1) Open Ride (You can cancel them):</p>
+        {% if sharedOpenRides %}
+        <table style="width:100%">
+          <tr>
+            <th>Address</th>
+            <th>Arrival Time</th>
+            <th>Passenger Number</th>
+            <th>Allow Sharer</th>
+          </tr>
+          {% for sharedOpenRide in sharedOpenRides %}
+          <tr>
+            <td>{{sharedOpenRide.address}}</td>
+            <td>{{sharedOpenRide.arrival_time}}</td>
+            <td>{{sharedOpenRide.passenger_num}}</td>
+            <td>{{sharedOpenRide.allow_sharer}}</td>
+            <td><button><a href="{% url 'ride:rideSharerEditDetail' sharedOpenRide.id %}">Edit</a></button></td>
+          </tr>
+          {% endfor%}
+        </table>
+        {% else %}
+            <p>None</p>
+        {% endif %}
+        <br>
+        <p> 2) Confirmed Ride (You can only view them):</p>
+        {% if sharedConfirmedRides %}
+        <table style="width:100%">
+          <tr>
+            <th>Address</th>
+            <th>Arrival Time</th>
+            <th>Passenger Number</th>
+            <th>Allow Sharer</th>
+          </tr>
+          {% for sharedConfirmedRide in sharedConfirmedRides %}
+          <tr>
+            <td>{{sharedConfirmedRide.address}}</td>
+            <td>{{sharedConfirmedRide.arrival_time}}</td>
+            <td>{{sharedConfirmedRide.passenger_num}}</td>
+            <td>{{sharedConfirmedRide.allow_sharer}}</td>
+            <td><button><a href="{% url 'ride:rideDetail' sharedConfirmedRide.id %}">View</a></button></td>
+          </tr>
+          {% endfor%}
+        </table>
+        {% else %}
+            <p>None</p>
+        {% endif %}
+        <br>
+    </ul>
+
+    <ul class="item">
+        <strong><p> The following are the confimed rides you drive for (You can mark them as complete):</p></strong><br>
+        {% if drivenRides %}
+        <table style="width:100%">
+          <tr>
+            <th>Address</th>
+            <th>Arrival Time</th>
+            <th>Passenger Number</th>
+            <th>Allow Sharer</th>
+          </tr>
+          {% for drivenRide in drivenRides %}
+          <tr>
+            <td>{{drivenRide.address}}</td>
+            <td>{{drivenRide.arrival_time}}</td>
+            <td>{{drivenRide.passenger_num}}</td>
+            <td>{{drivenRide.allow_sharer}}</td>
+            <td><button><a href="{% url 'ride:markAsComplete' drivenRide.id %}">Edit</a></button></td>
+          </tr>
+          {% endfor%}
+        </table>
+        {% else %}
+            <p>None</p>
+        {% endif %}
+            <br>
+    </ul>
+
+</div>
+{% endblock %}

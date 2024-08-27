@@ -1,0 +1,35 @@
+body{
+    background:linear-gradient(to right, #66aaaf 0%, #777fac 100%);
+    margin:top 50px;
+}
+
+#container-fluid .row{
+    width: 1300px;;
+    text-align: center;
+    background-color: #ff000000;
+    padding: 0px 0px;
+    margin:auto;
+}
+
+.col-sm-2{
+    width: 1300px;;
+    height: 50px;
+    margin-top:50px;
+    text-align:center;
+    background:#cde8f8bf;
+    padding:10px 50px;
+    border-radius: 5px;
+    margin-left: 12px;  
+}
+.nav li a{ 
+    font-size:15px;
+    text-align:center;
+    color:rgb(203, 118, 28); 
+}
+
+.nav li{ 
+    width: 240px;
+    height: 30px;
+    text-align:center;
+    display: inline;
+}

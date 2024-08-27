@@ -1,0 +1,31 @@
+#delete-box{
+    width:1300px;
+    height:auto;
+    margin:0 auto ;
+    text-align:center;
+    background:#cde8f8bf;
+    padding:20px 50px;
+    border-radius: 5px;
+    margin-top: 10px; 
+}
+
+#delete-box h1{
+    color:rgb(34, 32, 77);
+}
+
+#delete-box p{
+    font-size: 25px;
+    font-weight: 900;
+}
+
+#delete-box button{
+    margin-top:20px;
+    width:190px;
+    height:30px;
+    font-size:20px;
+    font-weight:700;
+    color:rgb(255, 255, 255);
+    background-image: linear-gradient(to right, #66aaaf 0%, #777fac 100%);
+    border:0;
+    border-radius:15px;
+}

@@ -1,0 +1,52 @@
+1/27/2023
+To be added
+
+1. What if user wants to reset his/her password?
+
+2. haven't implemented email verification
+
+1/29/2023
+
+1 what if an open ride with ride sharer is modified by ride owner and the arrival time doesn’t meet the ride sharers’ requirements anymore?
+
+2 what if a sharer leaves the ride before confirmed, how can we handle the passenger number?
+
+1/30/2023
+
+1. Driver info shouldn't be allowed to register twice.
+
+2. What if the ride is overdue?
+
+
+1/31/2023
+
+1. what should we allow ride owner to edit? like allow_sharer and passenger_num?
+
+2/1/2023
+
+1. why does success message of requesting a ride would appear twice?
+
+2/2/2023
+
+1. Codes of My orders sharer part haven't been tested
+
+2. what will happen if different drivers claim the same order?
+
+3. Can driver claim its own rides?
+
+2/3/2023
+
+1. we should prevent user from joining the ride it's already in 
+
+2. if we allow sharer to leave the ride, the best approach is to store sharer and its party' passenger number related to the ride relationship
+
+3. if ride is out of date, it can still be searched and joined
+
+
+2/4/2023
+
+1. what if driver claim several rides and then deleted its account?
+
+2/6/2023
+
+1. Because we didn't define the relation model between each ride participant with its own party people number, we can't calculate the correct passenger number if any of them want to leave the ride

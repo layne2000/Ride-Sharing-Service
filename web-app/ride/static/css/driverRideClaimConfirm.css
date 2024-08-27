@@ -1,0 +1,41 @@
+
+#driverRideClaimConfirm{
+    width:1300px;
+    height:auto;
+    text-align:center;
+    background:#cde8f8bf;
+    padding:20px 50px;
+    border-radius: 5px;
+    margin-top: 10px;
+    
+}
+
+
+#driverRideClaimConfirm h1{
+    color:rgb(34, 32, 77);
+    text-align:center;
+    font-weight: 900;
+}
+
+.rider{
+    background:#ffffff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.rider p{
+    font-size: 18px;
+}
+
+
+#driverRideClaimConfirm button{
+    margin-top:20px;
+    width:190px;
+    height:30px;
+    font-size:20px;
+    font-weight:700;
+    color:rgb(255, 255, 255);
+    background-image: linear-gradient(to right, #66aaaf 0%, #777fac 100%);
+    border:0;
+    border-radius:15px;
+}

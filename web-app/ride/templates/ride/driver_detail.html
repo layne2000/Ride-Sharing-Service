@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div id="driver-box">
+  <h1>Your Driver Information</h1><br>
+
+  <ul class="driver">
+    <p><br><strong>First Name:</strong> {{ driver.first_name }}</p> 
+    <p><strong>Last Name:</strong> {{ driver.last_name }}</p>
+    <p><strong>Vehicle Type:</strong> {{ driver.vehicle_type }}</p>
+    <p><strong>License Plate Number:</strong> {{ driver.license_plate_number }}</p>
+    <p><strong>Max Number of Passengers:</strong> {{ driver.max_num_of_passenger}}</p>
+    <br>
+    <a href="{% url 'ride:driver-update' user.id %}">Edit your Profile</a>&emsp;&emsp;&emsp;
+    <a href="{% url 'ride:driver-delete' user.id %}">Delete your driver account</a>
+  </ul>
+</div>
+{% endblock %}

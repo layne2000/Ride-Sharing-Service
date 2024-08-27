@@ -1,0 +1,44 @@
+#order-box{
+    width:1300px;
+    height:auto;
+    text-align:center;
+    background:#cde8f8bf;
+    padding:20px 50px;
+    border-radius: 5px;
+    margin-top: 10px;
+    
+}
+
+
+#order-box h1{
+    color:rgb(34, 32, 77);
+    text-align:center;
+    font-weight: 900;
+}
+
+.item {
+    width:auto;
+    font-size:18px;
+    margin-top: 10px;
+    border-bottom:2px solid rgba(51, 105, 212, 0.606);
+    padding:5px 10px;
+    background:#ffffff;
+    color:rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.item button{
+    margin-top:15px;
+    width:90px;
+    height:30px;
+    font-size:20px;
+    font-weight:700;
+    color:rgb(255, 255, 255);
+    background-image: linear-gradient(to right, #66aaaf 0%, #777fac 100%);
+    border:0;
+    border-radius:15px;
+}
+
+.item .tr .td a{
+    color: red;
+}
